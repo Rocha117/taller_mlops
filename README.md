@@ -31,7 +31,9 @@ rama de la fase ──► Pull Request ─────────────�
  2. Entrenar           entrena sentimiento y tema con data/train/
  3. Desplegar (gate)   evalúa contra el golden set; si no llega al umbral, falla
  4. Puntuar            predice el lote y guarda la versión del modelo en cada fila
- 5. Monitorear         compara el lote con la línea base y deja un reporte
+ 5. Monitorear         compara el lote con la línea base, deja un reporte y avisa si hay deriva
+
+ Además: correr a mano eligiendo el lote (lote 1 o lote 2) y, si tu spec lo pide, cada semana
 
 Fase 2 · de tarea
  6. Reentrenar         entrena un modelo retador con datos nuevos

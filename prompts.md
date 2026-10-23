@@ -19,7 +19,9 @@ Los Prompts 1 y 2 **no vienen listos**. Hay un esqueleto por cada parte de SDD: 
 
 **Stack tecnológico** (`constitucion/stack-tecnologico.md`)
 - El modelo ya está elegido en el input del negocio. ¿Qué dice la constitución sobre cómo se entrena, dónde se guarda el artefacto y cómo se versiona?
-- ¿Qué stages tiene el pipeline y en qué orden? ¿Qué stage **detiene** el pipeline y cuál solo **avisa**?
+- ¿Qué stages tiene el pipeline (el GitHub Action) y en qué orden? ¿Qué stage **detiene** el pipeline y cuál solo **avisa**?
+- ¿**Cuándo** corre el Action? En cada Pull Request, a mano eligiendo el lote, y ¿también programado cada semana para monitorear?
+- **Monitoreo:** ¿contra qué **línea base** se compara cada lote (el entrenamiento, el lote 1)? ¿Dónde queda guardada? ¿Qué métricas se miran? ¿Dónde se ve el resultado (resumen de la ejecución, artefacto, issue)?
 - Las 4 preguntas de operación: ¿cómo se **despliega**, cómo se **monitorea**, cuándo se **reentrena** y quién **aprueba o revierte**?
 - ¿Qué riesgos trae usar la salida de un modelo como dato productivo? ¿Qué controles ponemos (versión en cada fila, datos personales, revisión humana)?
 - ¿Cómo cuidamos el costo y el tiempo de cada corrida?
@@ -53,9 +55,10 @@ archivos:
      dónde se guarda el artefacto y cómo se versiona ]
    - Orquestación: GitHub Actions, sin secrets ni servicios pagados.
      [ stages del pipeline, en orden; cuáles detienen y cuáles avisan ]
+     [ cuándo corre: Pull Request, manual con el lote como input, programado ]
    - Versionamiento y ramas: [ ... ]
    - Desplegar: [ ... ]
-   - Monitorear: [ ... ]
+   - Monitorear: [ línea base, métricas, umbral de alerta y dónde se ve ]
    - Reentrenar: [ ... ]
    - Aprobar y revertir: [ ... ]
    - Gobierno: [ ... ]
@@ -95,6 +98,8 @@ Reglas:
 - ¿Cómo se evalúa el modelo contra el golden set? ¿Qué métrica y qué umbral para sentimiento y para tema?
 - ¿Qué cuenta como **comentario sospechoso** y qué motivo se guarda?
 - ¿Qué compara el monitoreo entre el lote y la línea base? ¿Qué número enciende la alerta?
+- ¿Cómo se ve la alerta en el Action: el job queda en rojo, deja una advertencia o abre un issue? ¿Dónde queda el reporte del lote?
+- ¿Cómo se le indica al Action qué lote correr (por ejemplo, un input de `workflow_dispatch`)?
 - ¿Qué pasa con los datos personales que vienen en el texto?
 
 **Plan** (`plan.md`)
@@ -119,7 +124,9 @@ Crea specs/AAAA-MM-DD-nombre-de-la-fase/ con tres archivos en español:
    - Reglas de datos antes de puntuar: [ ... ]
    - Gate de despliegue (métrica y umbral): [ ... ]
    - Comentarios sospechosos: [ ... ]
-   - Monitoreo (qué se compara y qué enciende la alerta): [ ... ]
+   - Disparadores del Action (PR, manual con el lote como input, programado): [ ... ]
+   - Monitoreo (línea base, métricas, umbral, cómo se ve la alerta y dónde
+     queda el reporte): [ ... ]
    - Restricciones (datos personales, costo, idempotencia, trazabilidad): [ ... ]
    - Decisiones tomadas y su motivo.
 
@@ -158,8 +165,11 @@ la vez, respetando requerimientos.md y constitucion/stack-tecnologico.md.
 
 - El modelo es el elegido en negocio/input-negocio.md. Escríbelo en Python y
   deja las dependencias en requirements.txt con versiones fijas.
-- El pipeline corre en GitHub Actions en cada Pull Request hacia main, con un
-  job por stage, sin secrets ni servicios pagados.
+- El pipeline corre en GitHub Actions con los disparadores que define la
+  spec (al menos en cada Pull Request hacia main y a mano eligiendo el lote),
+  con un job por stage, sin secrets ni servicios pagados.
+- El stage de monitoreo publica su reporte en el resumen de la ejecución y
+  muestra la alerta como define la spec.
 - Guarda el modelo entrenado y los reportes como artefactos de la ejecución.
 - Documenta en el README qué hace cada script y en qué stage corre.
 - Después de cada grupo de tareas, dime qué archivos cambiaste.
