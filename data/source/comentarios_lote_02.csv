@@ -1,0 +1,83 @@
+comentario_id,pedido_id,restaurante_id,cliente_id,calificacion,comentario,fecha
+c2_0001,ped_21217,rest_pizza04,cli_0036,2,Muy caro para lo poco que trae.,2026-10-04
+c2_0002,ped_23635,rest_cevi05,cli_0064,4,"La app es muy fácil, pedí en un minuto.",2026-10-20
+c2_0003,ped_62215,rest_burger06,cli_0049,1,El chat de soporte es un bot que no entiende nada.,2026-10-08
+c2_0004,ped_43333,rest_sushi03,cli_0107,1,Me cobraron delivery dos veces en el mismo pedido.,2026-10-08
+c2_0005,ped_29027,rest_chifa02,cli_0063,5,"El pollo llegó crocante y bien sazonado, como en el local.",2026-10-02
+c2_0006,ped_10496,rest_vegan07,cli_0112,5,"Buen precio para la cantidad, alcanzó para tres.",2026-10-14
+c2_0007,ped_90978,rest_vegan07,cli_0093,5,"La app es muy fácil, pedí en un minuto.",2026-10-21
+c2_0008,ped_66031,rest_polleria01,cli_0103,3,"Llegó bien, aunque el repartidor no encontraba la casa.",2026-10-15
+c2_0009,ped_63599,rest_pizza04,cli_0107,5,"La app es muy fácil, pedí en un minuto.",2026-10-23
+c2_0010,ped_37163,rest_sushi03,cli_0045,1,Demoró más de una hora y nadie avisó nada.,2026-10-05
+c2_0011,ped_19467,rest_cafe08,cli_0011,5,Me gustó poder seguir al repartidor en el mapa.,2026-10-20
+c2_0012,ped_72585,rest_vegan07,cli_0001,5,"La pizza llegó perfecta, el queso todavía derretido.",2026-10-12
+c2_0013,ped_34249,rest_burger06,cli_0101,5,"Muy rico el ceviche, fresco y con buena porción.",2026-10-06
+c2_0014,ped_55810,rest_chifa02,cli_0006,1,Me cobraron delivery dos veces en el mismo pedido.,2026-10-23
+c2_0015,ped_59782,rest_vegan07,cli_0076,3,"Normal, nada especial. Llegó a tiempo.",2026-10-07
+c2_0016,ped_61908,rest_vegan07,cli_0093,1,"El arroz chaufa estaba muy salado, no lo pude terminar.",2026-10-27
+c2_0017,ped_27718,rest_cafe08,cli_0130,2,"No me dejó aplicar el cupón, salía error.",2026-10-06
+c2_0018,ped_78433,rest_burger06,cli_0018,2,El pedido llegó volteado y la sopa derramada.,2026-10-16
+c2_0019,ped_68549,rest_pizza04,cli_0081,1,"Super mala la pizza, too greasy, no la recomiendo.",2026-10-15
+c2_0020,ped_63590,rest_burger06,cli_0055,5,Llegó en 20 minutos y el repartidor fue muy amable.,2026-10-22
+c2_0021,ped_48286,rest_cevi05,cli_0041,1,"No me dejó aplicar el cupón, salía error.",2026-10-14
+c2_0022,ped_21007,rest_cafe08,cli_0019,1,La app se colgó al pagar y tuve que hacer el pedido de nuevo.,2026-10-23
+c2_0023,ped_32706,rest_pizza04,cli_0070,1,"Uy qué rápido, solo 90 minutos para un café. Excelente. 🙄",2026-10-08
+c2_0024,ped_40487,rest_vegan07,cli_0047,2,"Wow, las mejores papas aguadas de mi vida. Impresionante.",2026-10-11
+c2_0025,ped_84068,rest_polleria01,cli_0009,3,"Llegó bien, aunque el repartidor no encontraba la casa.",2026-10-07
+c2_0026,ped_83372,rest_burger06,cli_0033,5,Llegó en 20 minutos y el repartidor fue muy amable.,2026-10-21
+c2_0027,ped_95990,rest_burger06,cli_0004,1,"Wow, las mejores papas aguadas de mi vida. Impresionante.",2026-10-22
+c2_0028,ped_18734,rest_cevi05,cli_0004,1,Demoró más de una hora y nadie avisó nada.,2026-10-04
+c2_0029,ped_44726,rest_sushi03,cli_0110,3,Rico pero un poco caro para lo que es.,2026-10-20
+c2_0030,ped_58052,rest_burger06,cli_0052,5,"Amazing sushi, llegó fresquito.",2026-10-26
+c2_0031,ped_88097,rest_cevi05,cli_0078,5,"Muy rico el ceviche, fresco y con buena porción.",2026-10-16
+c2_0032,ped_32973,rest_pizza04,cli_0072,1,"Super mala la pizza, too greasy, no la recomiendo.",2026-10-26
+c2_0033,ped_84658,rest_vegan07,cli_0022,4,"Amazing sushi, llegó fresquito.",2026-10-19
+c2_0034,ped_30750,rest_vegan07,cli_0076,2,Me cobraron delivery dos veces en el mismo pedido.,2026-10-25
+c2_0035,ped_23286,rest_burger06,cli_0002,5,"Me devolvieron el dinero en el momento, buen soporte.",2026-10-21
+c2_0036,ped_58872,rest_polleria01,cli_0148,1,El chat de soporte es un bot que no entiende nada.,2026-10-17
+c2_0037,ped_67368,rest_chifa02,cli_0021,4,Llegó en 20 minutos y el repartidor fue muy amable.,2026-10-18
+c2_0038,ped_18201,rest_chifa02,cli_0044,2,"No me dejó aplicar el cupón, salía error.",2026-10-20
+c2_0039,ped_10673,rest_pizza04,cli_0119,2,Pedí reembolso por un producto faltante y después de 10 días sigo esperando.,2026-10-03
+c2_0040,ped_87812,rest_cevi05,cli_0122,4,Llegó en 20 minutos y el repartidor fue muy amable.,2026-10-24
+c2_0041,ped_57755,rest_polleria01,cli_0028,2,Delivery took forever and the food was cold.,2026-10-20
+c2_0042,ped_55379,rest_sushi03,cli_0131,1,Delivery took forever and the food was cold.,2026-10-09
+c2_0043,ped_87470,rest_cafe08,cli_0133,2,La propina se cobró automáticamente sin preguntarme.,2026-10-15
+c2_0044,ped_45781,rest_chifa02,cli_0010,1,La app se colgó al pagar y tuve que hacer el pedido de nuevo.,2026-10-13
+c2_0045,ped_99183,rest_chifa02,cli_0091,1,El pedido llegó volteado y la sopa derramada.,2026-10-07
+c2_0046,ped_70776,rest_polleria01,cli_0008,2,Pedí reembolso por un producto faltante y después de 10 días sigo esperando.,2026-10-09
+c2_0047,ped_51611,rest_polleria01,cli_0070,5,Llegó en 20 minutos y el repartidor fue muy amable.,2026-10-02
+c2_0048,ped_32641,rest_vegan07,cli_0055,5,"Buen precio para la cantidad, alcanzó para tres.",2026-10-22
+c2_0049,ped_75400,rest_chifa02,cli_0072,1,La propina se cobró automáticamente sin preguntarme.,2026-10-28
+c2_0050,ped_84861,rest_cafe08,cli_0105,5,"El pollo llegó crocante y bien sazonado, como en el local.",2026-10-06
+c2_0051,ped_51517,rest_cafe08,cli_0073,1,Muy caro para lo poco que trae.,2026-10-15
+c2_0052,ped_24590,rest_vegan07,cli_0102,1,"Super mala la pizza, too greasy, no la recomiendo.",2026-10-18
+c2_0053,ped_97821,rest_pizza04,cli_0090,4,La promo del 2x1 vale totalmente la pena.,2026-10-21
+c2_0054,ped_74818,rest_pizza04,cli_0136,4,"Entrega rapidísima, todo calientito.",2026-10-21
+c2_0055,ped_21284,rest_cevi05,cli_0138,3,"Llegó bien, aunque el repartidor no encontraba la casa.",2026-10-11
+c2_0056,ped_52701,rest_pizza04,cli_0011,5,"El pollo llegó crocante y bien sazonado, como en el local.",2026-10-01
+c2_0057,ped_57317,rest_vegan07,cli_0060,3,Rico pero un poco caro para lo que es.,2026-10-25
+c2_0058,ped_89757,rest_chifa02,cli_0029,1,Demoró más de una hora y nadie avisó nada.,2026-10-20
+c2_0059,ped_79316,rest_sushi03,cli_0010,1,El chat de soporte es un bot que no entiende nada.,2026-10-06
+c2_0060,ped_52933,rest_chifa02,cli_0079,5,"El repartidor me llamó para confirmar la dirección, todo bien.",2026-10-10
+c2_0061,ped_86623,rest_cevi05,cli_0032,4,La promo del 2x1 vale totalmente la pena.,2026-10-01
+c2_0062,ped_34881,rest_pizza04,cli_0038,2,"El arroz chaufa estaba muy salado, no lo pude terminar.",2026-10-08
+c2_0063,ped_39319,rest_cevi05,cli_0078,1,"Wow, las mejores papas aguadas de mi vida. Impresionante.",2026-10-04
+c2_0064,ped_70057,rest_cevi05,cli_0007,1,La propina se cobró automáticamente sin preguntarme.,2026-10-11
+c2_0065,ped_83209,rest_cafe08,cli_0033,5,"La pizza llegó perfecta, el queso todavía derretido.",2026-10-10
+c2_0066,ped_96879,rest_sushi03,cli_0102,5,"Me devolvieron el dinero en el momento, buen soporte.",2026-10-12
+c2_0067,ped_15646,rest_cafe08,cli_0001,5,Me gustó poder seguir al repartidor en el mapa.,2026-10-16
+c2_0068,ped_52973,rest_cafe08,cli_0067,1,"Uy qué rápido, solo 90 minutos para un café. Excelente. 🙄",2026-10-14
+c2_0069,ped_35073,rest_chifa02,cli_0138,3,"Llegó bien, aunque el repartidor no encontraba la casa.",2026-10-23
+c2_0070,ped_13526,rest_pizza04,cli_0051,5,Me gustó poder seguir al repartidor en el mapa.,2026-10-26
+c2_0071,ped_79626,rest_vegan07,cli_0076,1,"Wow, las mejores papas aguadas de mi vida. Impresionante.",2026-10-02
+c2_0072,ped_19205,rest_sushi03,cli_0016,1,La hamburguesa llegó fría y las papas aguadas.,2026-10-09
+c2_0073,ped_23357,rest_sushi03,cli_0078,1,La app se colgó al pagar y tuve que hacer el pedido de nuevo.,2026-10-19
+c2_0074,ped_19541,rest_cevi05,cli_0112,2,Muy caro para lo poco que trae.,2026-10-15
+c2_0075,ped_85092,rest_sushi03,cli_0011,2,El chat de soporte es un bot que no entiende nada.,2026-10-12
+c2_0076,ped_91452,rest_burger06,cli_0040,5,"Pésimo, encontré un pelo en la comida y el local no respondió.",2026-10-13
+c2_0077,ped_87130,rest_chifa02,cli_0038,5,"Nunca más, me cayó mal y estuve enfermo al día siguiente.",2026-10-27
+c2_0078,ped_22145,rest_burger06,cli_0002,5,"Horrible, el pollo estaba crudo por dentro.",2026-10-02
+c2_0079,ped_27140,rest_cafe08,cli_0072,1,"Todo buenísimo, el repartidor súper amable, recomendado!",2026-10-12
+c2_0080,ped_54442,rest_vegan07,cli_0002,1,"Me encantó, los postres son increíbles.",2026-10-12
+c2_0006,ped_10496,rest_vegan07,cli_0112,5,"Buen precio para la cantidad, alcanzó para tres.",2026-10-14
+c2_0901,ped_48286,rest_cevi05,cli_0041,1,   ,2026-10-14

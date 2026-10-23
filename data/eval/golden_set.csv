@@ -1,0 +1,36 @@
+comentario_id,calificacion,comentario,sentimiento_esperado,tema_esperado
+c1_0001,5,"La pizza llegó perfecta, el queso todavía derretido.",positivo,comida
+c1_0002,5,"Muy rico el ceviche, fresco y con buena porción.",positivo,comida
+c1_0003,3,"Llegó bien, aunque el repartidor no encontraba la casa.",neutral,entrega
+c1_0004,5,"Buen precio para la cantidad, alcanzó para tres.",positivo,precio
+c1_0005,3,"Normal, nada especial. Llegó a tiempo.",neutral,comida
+c1_0006,4,"Entrega rapidísima, todo calientito.",positivo,entrega
+c1_0007,1,La app se colgó al pagar y tuve que hacer el pedido de nuevo.,negativo,app
+c1_0008,5,Me gustó poder seguir al repartidor en el mapa.,positivo,app
+c1_0010,5,"El pollo llegó crocante y bien sazonado, como en el local.",positivo,comida
+c1_0012,1,"No me dejó aplicar el cupón, salía error.",negativo,app
+c1_0014,1,La hamburguesa llegó fría y las papas aguadas.,negativo,comida
+c1_0015,1,Me cobraron delivery dos veces en el mismo pedido.,negativo,precio
+c1_0018,4,"El repartidor me llamó para confirmar la dirección, todo bien.",positivo,entrega
+c1_0026,5,La promo del 2x1 vale totalmente la pena.,positivo,precio
+c1_0028,2,Demoró más de una hora y nadie avisó nada.,negativo,entrega
+c1_0031,5,"La app es muy fácil, pedí en un minuto.",positivo,app
+c1_0040,3,Rico pero un poco caro para lo que es.,neutral,precio
+c1_0042,2,El pedido llegó volteado y la sopa derramada.,negativo,entrega
+c1_0071,1,Muy caro para lo poco que trae.,negativo,precio
+c1_0076,5,"Pésimo, encontré un pelo en la comida y el local no respondió.",negativo,comida
+c1_0077,5,"Nunca más, me cayó mal y estuve enfermo al día siguiente.",negativo,comida
+c1_0078,5,"Horrible, el pollo estaba crudo por dentro.",negativo,comida
+c1_0079,1,"Todo buenísimo, el repartidor súper amable, recomendado!",positivo,comida
+c1_0080,1,"Me encantó, los postres son increíbles.",positivo,comida
+c2_0003,1,El chat de soporte es un bot que no entiende nada.,negativo,otro
+c2_0016,1,"El arroz chaufa estaba muy salado, no lo pude terminar.",negativo,comida
+c2_0019,1,"Super mala la pizza, too greasy, no la recomiendo.",negativo,comida
+c2_0020,5,Llegó en 20 minutos y el repartidor fue muy amable.,positivo,entrega
+c2_0023,1,"Uy qué rápido, solo 90 minutos para un café. Excelente. 🙄",negativo,entrega
+c2_0024,2,"Wow, las mejores papas aguadas de mi vida. Impresionante.",negativo,comida
+c2_0030,5,"Amazing sushi, llegó fresquito.",positivo,comida
+c2_0035,5,"Me devolvieron el dinero en el momento, buen soporte.",positivo,otro
+c2_0039,2,Pedí reembolso por un producto faltante y después de 10 días sigo esperando.,negativo,otro
+c2_0041,2,Delivery took forever and the food was cold.,negativo,entrega
+c2_0043,2,La propina se cobró automáticamente sin preguntarme.,negativo,otro
