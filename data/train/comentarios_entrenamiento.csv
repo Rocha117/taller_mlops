@@ -1,0 +1,301 @@
+comentario_id,calificacion,comentario,sentimiento,tema
+t_0001,5,El cupón se aplicó sin problema.,positivo,app
+t_0002,5,Las porciones son generosas y sabrosas y los postres son una delicia. 10/10.,positivo,comida
+t_0003,4,Todo muy sabroso.,positivo,comida
+t_0004,3,"Normal, nada especial, muy caro para lo poco que trae.",neutral,precio
+t_0005,4,Las porciones son generosas y sabrosas. Gracias!,positivo,comida
+t_0006,2,Demoró más de una hora y llegó frío por la demora. Pésimo.,negativo,entrega
+t_0007,1,Encontré un pelo en el plato. Muy mal.,negativo,comida
+t_0008,4,Alcanzó para tres personas y el combo familiar sale a cuenta. Gracias!,positivo,precio
+t_0009,5,El arroz chaufa en su punto y todo muy sabroso. Recomendado.,positivo,comida
+t_0010,3,"Normal, nada especial, el combo familiar sale a cuenta.",neutral,precio
+t_0011,2,Demoró más de una hora.,negativo,entrega
+t_0012,3,¿tienen opciones sin gluten?,neutral,otro
+t_0013,5,Entrega rapidísima. Volveré a pedir.,positivo,entrega
+t_0014,1,La tarifa de envío es abusiva. Qué decepción.,negativo,precio
+t_0015,5,El ceviche estaba fresquísimo. Recomendado.,positivo,comida
+t_0016,1,El ceviche olía raro. Pésimo.,negativo,comida
+t_0017,1,Carísimo para la porción. Muy mal.,negativo,precio
+t_0018,2,Nadie avisó del retraso. No vuelvo a pedir.,negativo,entrega
+t_0019,1,Me cayó pesado todo. No vuelvo a pedir.,negativo,comida
+t_0020,5,Llegó en 20 minutos. Volveré a pedir.,positivo,entrega
+t_0021,5,Todo llegó calientito y a tiempo y el repartidor me avisó al llegar. 10/10.,positivo,entrega
+t_0022,2,Subieron los precios sin avisar. No vuelvo a pedir.,negativo,precio
+t_0023,4,El pollo llegó crocante y bien sazonado y el ceviche estaba fresquísimo.,positivo,comida
+t_0024,3,"Ni bueno ni malo, alcanzó para tres personas.",neutral,precio
+t_0025,1,La comida no tenía sabor y el pollo estaba crudo por dentro.,negativo,comida
+t_0026,3,¿atienden los domingos?,neutral,otro
+t_0027,1,Carísimo para la porción. No vuelvo a pedir.,negativo,precio
+t_0028,5,Los postres son una delicia.,positivo,comida
+t_0029,5,El cupón se aplicó sin problema. Recomendado.,positivo,app
+t_0030,4,La hamburguesa jugosa y bien armada. Gracias!,positivo,comida
+t_0031,5,Entrega rapidísima. 10/10.,positivo,entrega
+t_0032,4,El repartidor fue muy amable. Gracias!,positivo,entrega
+t_0033,2,El repartidor no encontraba la casa. Qué decepción.,negativo,entrega
+t_0034,5,Entrega rapidísima y todo llegó calientito y a tiempo.,positivo,entrega
+t_0035,1,Las papas estaban aguadas y el pollo estaba crudo por dentro. Qué decepción.,negativo,comida
+t_0036,3,"Aceptable para un día de semana, entrega rapidísima.",neutral,entrega
+t_0037,4,Precio justo por lo que traen. Volveré a pedir.,positivo,precio
+t_0038,4,El cupón se aplicó sin problema y la app es muy fácil de usar.,positivo,app
+t_0039,2,El motorizado fue grosero. Muy mal.,negativo,entrega
+t_0040,5,Llegó antes de lo que decía la app. Volveré a pedir.,positivo,entrega
+t_0041,1,El mapa del repartidor no cargaba y la app se colgó al pagar. Pésimo.,negativo,app
+t_0042,4,El arroz chaufa en su punto. Recomendado.,positivo,comida
+t_0043,2,El ceviche olía raro.,negativo,comida
+t_0044,3,"Estuvo bien, sin más, pude seguir al repartidor en el mapa.",neutral,app
+t_0045,5,Los postres son una delicia. Recomendado.,positivo,comida
+t_0046,5,La hamburguesa jugosa y bien armada. Volveré a pedir.,positivo,comida
+t_0047,1,El pollo estaba crudo por dentro y la pizza llegó quemada.,negativo,comida
+t_0048,1,Nadie avisó del retraso. Pésimo.,negativo,entrega
+t_0049,3,Consulta: ¿hacen pedidos para eventos?,neutral,otro
+t_0050,5,El combo familiar sale a cuenta.,positivo,precio
+t_0051,5,Pedí en un minuto desde la app y pude seguir al repartidor en el mapa. Volveré a pedir.,positivo,app
+t_0052,4,Llegó en 20 minutos y entrega rapidísima. Recomendado.,positivo,entrega
+t_0053,2,Demoró más de una hora y el repartidor no encontraba la casa. Muy mal.,negativo,entrega
+t_0054,5,Llegó en 20 minutos.,positivo,entrega
+t_0055,1,La pizza llegó quemada.,negativo,comida
+t_0056,1,Las papas estaban aguadas. Pésimo.,negativo,comida
+t_0057,5,El pollo llegó crocante y bien sazonado.,positivo,comida
+t_0058,5,El cupón se aplicó sin problema. Volveré a pedir.,positivo,app
+t_0059,5,Buen precio para la cantidad.,positivo,precio
+t_0060,4,"Muy rica la comida, igual que en el local y los postres son una delicia. Recomendado.",positivo,comida
+t_0061,5,Todo muy sabroso. Volveré a pedir.,positivo,comida
+t_0062,1,El arroz estaba demasiado salado. Muy mal.,negativo,comida
+t_0063,3,"Estuvo bien, sin más, llegó frío por la demora.",neutral,entrega
+t_0064,3,"Aceptable para un día de semana, todo llegó calientito y a tiempo.",neutral,entrega
+t_0065,3,Quisiera saber si emiten factura,neutral,otro
+t_0066,2,No me dejó aplicar el cupón y la app me cerró la sesión. No vuelvo a pedir.,negativo,app
+t_0067,1,La hamburguesa llegó fría. Qué decepción.,negativo,comida
+t_0068,5,Todo llegó calientito y a tiempo. 10/10.,positivo,entrega
+t_0069,5,El repartidor fue muy amable. Recomendado.,positivo,entrega
+t_0070,3,"Ni bueno ni malo, me cayó pesado todo.",neutral,comida
+t_0071,4,Precio justo por lo que traen. Gracias!,positivo,precio
+t_0072,2,Subieron los precios sin avisar.,negativo,precio
+t_0073,5,El repartidor me avisó al llegar y llegó en 20 minutos. 10/10.,positivo,entrega
+t_0074,2,El arroz estaba demasiado salado.,negativo,comida
+t_0075,1,El pollo estaba crudo por dentro y me cayó pesado todo. Pésimo.,negativo,comida
+t_0076,3,"Normal, nada especial, la app se colgó al pagar.",neutral,app
+t_0077,2,Demoró más de una hora. No vuelvo a pedir.,negativo,entrega
+t_0078,4,El lomo saltado estaba buenazo. 10/10.,positivo,comida
+t_0079,5,El pollo llegó crocante y bien sazonado. 10/10.,positivo,comida
+t_0080,4,El motorizado cuidó bien el pedido. Recomendado.,positivo,entrega
+t_0081,5,El motorizado cuidó bien el pedido. 10/10.,positivo,entrega
+t_0082,1,Muy caro para lo poco que trae. Qué decepción.,negativo,precio
+t_0083,1,El pedido llegó volteado y el repartidor no encontraba la casa.,negativo,entrega
+t_0084,4,Todo llegó calientito y a tiempo y llegó en 20 minutos. Volveré a pedir.,positivo,entrega
+t_0085,1,La app cobró y no registró el pedido. Qué decepción.,negativo,app
+t_0086,5,La pizza llegó con el queso derretido. 10/10.,positivo,comida
+t_0087,2,La app me cerró la sesión.,negativo,app
+t_0088,5,Llegó antes de lo que decía la app. 10/10.,positivo,entrega
+t_0089,1,Las papas estaban aguadas. No vuelvo a pedir.,negativo,comida
+t_0090,4,Barato y rendidor. 10/10.,positivo,precio
+t_0091,1,Nadie avisó del retraso y el motorizado fue grosero. No vuelvo a pedir.,negativo,entrega
+t_0092,5,Todo muy sabroso. Gracias!,positivo,comida
+t_0093,1,No me dejó aplicar el cupón. Pésimo.,negativo,app
+t_0094,3,"Estuvo bien, sin más, el combo no vale lo que cuesta.",neutral,precio
+t_0095,2,La comida no tenía sabor. Pésimo.,negativo,comida
+t_0096,5,El ceviche estaba fresquísimo. 10/10.,positivo,comida
+t_0097,1,Demoró más de una hora. Pésimo.,negativo,entrega
+t_0098,5,La app es muy fácil de usar. Gracias!,positivo,app
+t_0099,5,El repartidor me avisó al llegar. Volveré a pedir.,positivo,entrega
+t_0100,5,La hamburguesa jugosa y bien armada. 10/10.,positivo,comida
+t_0101,4,El pollo llegó crocante y bien sazonado. Volveré a pedir.,positivo,comida
+t_0102,5,El repartidor me avisó al llegar.,positivo,entrega
+t_0103,4,Llegó en 20 minutos y el repartidor fue muy amable. Gracias!,positivo,entrega
+t_0104,5,Todo muy sabroso y la hamburguesa jugosa y bien armada. Recomendado.,positivo,comida
+t_0105,4,El arroz chaufa en su punto. 10/10.,positivo,comida
+t_0106,1,La app cobró y no registró el pedido. No vuelvo a pedir.,negativo,app
+t_0107,3,"Aceptable para un día de semana, el combo familiar sale a cuenta.",neutral,precio
+t_0108,3,"Aceptable para un día de semana, la app está lentísima.",neutral,app
+t_0109,3,"Estuvo bien, sin más, la app se colgó al pagar.",neutral,app
+t_0110,4,La hamburguesa jugosa y bien armada y el arroz chaufa en su punto. Gracias!,positivo,comida
+t_0111,1,La comida no tenía sabor.,negativo,comida
+t_0112,4,La promo 2x1 vale la pena. Gracias!,positivo,precio
+t_0113,1,El pedido llegó volteado.,negativo,entrega
+t_0114,2,Subieron los precios sin avisar. Qué decepción.,negativo,precio
+t_0115,1,El ceviche olía raro. Muy mal.,negativo,comida
+t_0116,1,La tarifa de envío es abusiva y carísimo para la porción. Pésimo.,negativo,precio
+t_0117,5,La hamburguesa jugosa y bien armada.,positivo,comida
+t_0118,5,El repartidor me avisó al llegar. Recomendado.,positivo,entrega
+t_0119,1,La app me cerró la sesión y la app cobró y no registró el pedido. Pésimo.,negativo,app
+t_0120,1,Llegó frío por la demora. No vuelvo a pedir.,negativo,entrega
+t_0121,3,"Ni bueno ni malo, el motorizado cuidó bien el pedido.",neutral,entrega
+t_0122,5,Entrega rapidísima.,positivo,entrega
+t_0123,3,"Estuvo bien, sin más, el repartidor fue muy amable.",neutral,entrega
+t_0124,2,El pollo estaba crudo por dentro.,negativo,comida
+t_0125,2,La hamburguesa llegó fría. No vuelvo a pedir.,negativo,comida
+t_0126,1,El arroz estaba demasiado salado. No vuelvo a pedir.,negativo,comida
+t_0127,1,La app está lentísima.,negativo,app
+t_0128,5,Todo muy sabroso y la hamburguesa jugosa y bien armada.,positivo,comida
+t_0129,4,La promo 2x1 vale la pena.,positivo,precio
+t_0130,5,El combo familiar sale a cuenta y buen precio para la cantidad.,positivo,precio
+t_0131,5,Precio justo por lo que traen y barato y rendidor. Gracias!,positivo,precio
+t_0132,5,Pedí en un minuto desde la app y la app es muy fácil de usar.,positivo,app
+t_0133,4,Las porciones son generosas y sabrosas y la pizza llegó con el queso derretido. Gracias!,positivo,comida
+t_0134,3,"Estuvo bien, sin más, todo llegó calientito y a tiempo.",neutral,entrega
+t_0135,5,La app es muy fácil de usar y pude seguir al repartidor en el mapa.,positivo,app
+t_0136,5,Pagar con la app fue rápido. 10/10.,positivo,app
+t_0137,3,"Normal, nada especial, alcanzó para tres personas.",neutral,precio
+t_0138,1,La app se colgó al pagar.,negativo,app
+t_0139,5,El lomo saltado estaba buenazo y el pollo llegó crocante y bien sazonado. Volveré a pedir.,positivo,comida
+t_0140,1,La app está lentísima. Qué decepción.,negativo,app
+t_0141,5,"Muy rica la comida, igual que en el local. 10/10.",positivo,comida
+t_0142,5,Todo llegó calientito y a tiempo y el repartidor me avisó al llegar.,positivo,entrega
+t_0143,4,El pollo llegó crocante y bien sazonado. Recomendado.,positivo,comida
+t_0144,3,"Aceptable para un día de semana, nadie avisó del retraso.",neutral,entrega
+t_0145,4,Buen precio para la cantidad. Gracias!,positivo,precio
+t_0146,2,Encontré un pelo en el plato y el ceviche olía raro. No vuelvo a pedir.,negativo,comida
+t_0147,5,Barato y rendidor y alcanzó para tres personas.,positivo,precio
+t_0148,5,"El lomo saltado estaba buenazo y muy rica la comida, igual que en el local. 10/10.",positivo,comida
+t_0149,5,Llegó antes de lo que decía la app y llegó en 20 minutos. Volveré a pedir.,positivo,entrega
+t_0150,5,El repartidor fue muy amable y entrega rapidísima. Recomendado.,positivo,entrega
+t_0151,5,La pizza llegó con el queso derretido y el pollo llegó crocante y bien sazonado. Volveré a pedir.,positivo,comida
+t_0152,5,Los postres son una delicia. 10/10.,positivo,comida
+t_0153,5,Los postres son una delicia. Gracias!,positivo,comida
+t_0154,4,Llegó antes de lo que decía la app. Gracias!,positivo,entrega
+t_0155,4,Entrega rapidísima y llegó antes de lo que decía la app. Gracias!,positivo,entrega
+t_0156,3,"Normal, nada especial, la sopa vino derramada.",neutral,entrega
+t_0157,4,El arroz chaufa en su punto.,positivo,comida
+t_0158,1,El motorizado fue grosero.,negativo,entrega
+t_0159,5,El arroz chaufa en su punto y los postres son una delicia. Volveré a pedir.,positivo,comida
+t_0160,4,El motorizado cuidó bien el pedido. Volveré a pedir.,positivo,entrega
+t_0161,1,El combo no vale lo que cuesta. Muy mal.,negativo,precio
+t_0162,1,Me cayó pesado todo. Qué decepción.,negativo,comida
+t_0163,5,Precio justo por lo que traen y buen precio para la cantidad. Gracias!,positivo,precio
+t_0164,1,Muy caro para lo poco que trae y me cobraron el delivery dos veces. Pésimo.,negativo,precio
+t_0165,1,Carísimo para la porción y subieron los precios sin avisar.,negativo,precio
+t_0166,1,La sopa vino derramada. Muy mal.,negativo,entrega
+t_0167,1,La hamburguesa llegó fría.,negativo,comida
+t_0168,5,Buen precio para la cantidad y alcanzó para tres personas. Recomendado.,positivo,precio
+t_0169,4,Llegó en 20 minutos. Recomendado.,positivo,entrega
+t_0170,4,El repartidor fue muy amable. Volveré a pedir.,positivo,entrega
+t_0171,2,El combo no vale lo que cuesta. Pésimo.,negativo,precio
+t_0172,1,Subieron los precios sin avisar y el combo no vale lo que cuesta. Qué decepción.,negativo,precio
+t_0173,1,Llegó frío por la demora. Qué decepción.,negativo,entrega
+t_0174,2,La carne vino dura.,negativo,comida
+t_0175,5,Alcanzó para tres personas. Gracias!,positivo,precio
+t_0176,3,"Estuvo bien, sin más, el cupón se aplicó sin problema.",neutral,app
+t_0177,1,Muy caro para lo poco que trae y me cobraron el delivery dos veces. Muy mal.,negativo,precio
+t_0178,1,No me dejó aplicar el cupón. Muy mal.,negativo,app
+t_0179,3,"Ni bueno ni malo, la app es muy fácil de usar.",neutral,app
+t_0180,5,El repartidor me avisó al llegar. Gracias!,positivo,entrega
+t_0181,1,El arroz estaba demasiado salado y el pollo estaba crudo por dentro. Qué decepción.,negativo,comida
+t_0182,5,El ceviche estaba fresquísimo.,positivo,comida
+t_0183,3,"Aceptable para un día de semana, el motorizado fue grosero.",neutral,entrega
+t_0184,5,El arroz chaufa en su punto. Gracias!,positivo,comida
+t_0185,3,¿cambiaron de horario?,neutral,otro
+t_0186,5,La hamburguesa jugosa y bien armada y los postres son una delicia.,positivo,comida
+t_0187,5,Los postres son una delicia y la pizza llegó con el queso derretido. Volveré a pedir.,positivo,comida
+t_0188,4,La app es muy fácil de usar.,positivo,app
+t_0189,1,La sopa vino derramada.,negativo,entrega
+t_0190,1,Llegó frío por la demora y el repartidor no encontraba la casa. No vuelvo a pedir.,negativo,entrega
+t_0191,1,La app está lentísima. Muy mal.,negativo,app
+t_0192,5,El motorizado cuidó bien el pedido y el repartidor fue muy amable. Volveré a pedir.,positivo,entrega
+t_0193,1,La pizza llegó quemada y el pollo estaba crudo por dentro. No vuelvo a pedir.,negativo,comida
+t_0194,4,Pude seguir al repartidor en el mapa y la app guarda mis direcciones. Volveré a pedir.,positivo,app
+t_0195,5,El lomo saltado estaba buenazo.,positivo,comida
+t_0196,5,El cupón se aplicó sin problema. 10/10.,positivo,app
+t_0197,5,El cupón se aplicó sin problema y pedí en un minuto desde la app. Volveré a pedir.,positivo,app
+t_0198,2,Encontré un pelo en el plato.,negativo,comida
+t_0199,1,El pollo estaba crudo por dentro. No vuelvo a pedir.,negativo,comida
+t_0200,2,El repartidor no encontraba la casa. Muy mal.,negativo,entrega
+t_0201,3,"Normal, nada especial, la pizza llegó con el queso derretido.",neutral,comida
+t_0202,2,La pizza llegó quemada. Pésimo.,negativo,comida
+t_0203,2,La hamburguesa llegó fría. Muy mal.,negativo,comida
+t_0204,5,Llegó antes de lo que decía la app y todo llegó calientito y a tiempo. Gracias!,positivo,entrega
+t_0205,3,"Cumple, aunque no sorprende, carísimo para la porción.",neutral,precio
+t_0206,4,Pedí en un minuto desde la app y la app es muy fácil de usar. 10/10.,positivo,app
+t_0207,1,El pollo estaba crudo por dentro. Qué decepción.,negativo,comida
+t_0208,2,La carne vino dura. Muy mal.,negativo,comida
+t_0209,5,El combo familiar sale a cuenta. Recomendado.,positivo,precio
+t_0210,2,El pollo estaba crudo por dentro. Pésimo.,negativo,comida
+t_0211,3,"Estuvo bien, sin más, la hamburguesa llegó fría.",neutral,comida
+t_0212,2,El motorizado fue grosero. Qué decepción.,negativo,entrega
+t_0213,5,Precio justo por lo que traen y alcanzó para tres personas. 10/10.,positivo,precio
+t_0214,1,Las papas estaban aguadas. Qué decepción.,negativo,comida
+t_0215,1,Muy caro para lo poco que trae.,negativo,precio
+t_0216,2,Encontré un pelo en el plato. Pésimo.,negativo,comida
+t_0217,3,"Aceptable para un día de semana, el combo no vale lo que cuesta.",neutral,precio
+t_0218,4,Entrega rapidísima. Gracias!,positivo,entrega
+t_0219,2,La pizza llegó quemada y la comida no tenía sabor. Pésimo.,negativo,comida
+t_0220,5,Llegó antes de lo que decía la app.,positivo,entrega
+t_0221,1,El combo no vale lo que cuesta y subieron los precios sin avisar.,negativo,precio
+t_0222,3,"Aceptable para un día de semana, la app cobró y no registró el pedido.",neutral,app
+t_0223,5,El combo familiar sale a cuenta y buen precio para la cantidad. 10/10.,positivo,precio
+t_0224,3,"Normal, nada especial, el cupón se aplicó sin problema.",neutral,app
+t_0225,5,Los postres son una delicia y el ceviche estaba fresquísimo. 10/10.,positivo,comida
+t_0226,5,"Muy rica la comida, igual que en el local.",positivo,comida
+t_0227,5,"Muy rica la comida, igual que en el local y todo muy sabroso.",positivo,comida
+t_0228,5,El repartidor me avisó al llegar. 10/10.,positivo,entrega
+t_0229,4,Llegó antes de lo que decía la app y entrega rapidísima.,positivo,entrega
+t_0230,2,Llegó frío por la demora.,negativo,entrega
+t_0231,1,La pizza llegó quemada y las papas estaban aguadas. Muy mal.,negativo,comida
+t_0232,2,El pedido llegó volteado. Pésimo.,negativo,entrega
+t_0233,4,La pizza llegó con el queso derretido. Gracias!,positivo,comida
+t_0234,5,Buen precio para la cantidad y barato y rendidor.,positivo,precio
+t_0235,1,Demoró más de una hora y el repartidor no encontraba la casa. Qué decepción.,negativo,entrega
+t_0236,3,"Ni bueno ni malo, el repartidor fue muy amable.",neutral,entrega
+t_0237,3,"Aceptable para un día de semana, el arroz estaba demasiado salado.",neutral,comida
+t_0238,1,Me cobraron el delivery dos veces. Muy mal.,negativo,precio
+t_0239,3,"Estuvo bien, sin más, el combo familiar sale a cuenta.",neutral,precio
+t_0240,2,Demoró más de una hora. Muy mal.,negativo,entrega
+t_0241,1,Carísimo para la porción. Pésimo.,negativo,precio
+t_0242,2,El mapa del repartidor no cargaba. Muy mal.,negativo,app
+t_0243,5,Los postres son una delicia y el pollo llegó crocante y bien sazonado. Gracias!,positivo,comida
+t_0244,5,Barato y rendidor.,positivo,precio
+t_0245,4,Pude seguir al repartidor en el mapa. 10/10.,positivo,app
+t_0246,5,Precio justo por lo que traen.,positivo,precio
+t_0247,5,La pizza llegó con el queso derretido. Volveré a pedir.,positivo,comida
+t_0248,1,Me cayó pesado todo. Pésimo.,negativo,comida
+t_0249,4,Entrega rapidísima. Recomendado.,positivo,entrega
+t_0250,5,La pizza llegó con el queso derretido.,positivo,comida
+t_0251,3,"Normal, nada especial, pagar con la app fue rápido.",neutral,app
+t_0252,1,Llegó frío por la demora y demoró más de una hora.,negativo,entrega
+t_0253,4,El lomo saltado estaba buenazo y el pollo llegó crocante y bien sazonado. Gracias!,positivo,comida
+t_0254,1,Me cayó pesado todo.,negativo,comida
+t_0255,2,Demoró más de una hora. Qué decepción.,negativo,entrega
+t_0256,3,"Aceptable para un día de semana, el lomo saltado estaba buenazo.",neutral,comida
+t_0257,4,El pollo llegó crocante y bien sazonado. Gracias!,positivo,comida
+t_0258,5,Llegó antes de lo que decía la app y el repartidor me avisó al llegar. 10/10.,positivo,entrega
+t_0259,2,La app me cerró la sesión. Muy mal.,negativo,app
+t_0260,5,Pedí en un minuto desde la app. Gracias!,positivo,app
+t_0261,1,El arroz estaba demasiado salado y la hamburguesa llegó fría. Qué decepción.,negativo,comida
+t_0262,5,La app guarda mis direcciones. Gracias!,positivo,app
+t_0263,3,"Ni bueno ni malo, llegó antes de lo que decía la app.",neutral,entrega
+t_0264,5,Buen precio para la cantidad. Recomendado.,positivo,precio
+t_0265,4,El ceviche estaba fresquísimo y el arroz chaufa en su punto. Volveré a pedir.,positivo,comida
+t_0266,4,Pagar con la app fue rápido y pedí en un minuto desde la app. 10/10.,positivo,app
+t_0267,2,El mapa del repartidor no cargaba y no me dejó aplicar el cupón. Qué decepción.,negativo,app
+t_0268,4,Llegó en 20 minutos. Gracias!,positivo,entrega
+t_0269,5,Pedí en un minuto desde la app.,positivo,app
+t_0270,4,La app guarda mis direcciones y pude seguir al repartidor en el mapa. Recomendado.,positivo,app
+t_0271,3,"Normal, nada especial, la app es muy fácil de usar.",neutral,app
+t_0272,1,Me cobraron el delivery dos veces y muy caro para lo poco que trae.,negativo,precio
+t_0273,3,"Cumple, aunque no sorprende, el combo no vale lo que cuesta.",neutral,precio
+t_0274,3,"Ni bueno ni malo, buen precio para la cantidad.",neutral,precio
+t_0275,2,La comida no tenía sabor y me cayó pesado todo. Pésimo.,negativo,comida
+t_0276,3,"Normal, nada especial, pude seguir al repartidor en el mapa.",neutral,app
+t_0277,4,Todo llegó calientito y a tiempo. Volveré a pedir.,positivo,entrega
+t_0278,3,"Estuvo bien, sin más, me cobraron el delivery dos veces.",neutral,precio
+t_0279,1,No me dejó aplicar el cupón y la app se colgó al pagar. No vuelvo a pedir.,negativo,app
+t_0280,1,La comida no tenía sabor y la hamburguesa llegó fría. Qué decepción.,negativo,comida
+t_0281,5,La promo 2x1 vale la pena y el combo familiar sale a cuenta. Gracias!,positivo,precio
+t_0282,3,"Normal, nada especial, el repartidor fue muy amable.",neutral,entrega
+t_0283,5,"El ceviche estaba fresquísimo y muy rica la comida, igual que en el local. Recomendado.",positivo,comida
+t_0284,5,La hamburguesa jugosa y bien armada y el pollo llegó crocante y bien sazonado.,positivo,comida
+t_0285,4,El ceviche estaba fresquísimo. Volveré a pedir.,positivo,comida
+t_0286,4,Todo llegó calientito y a tiempo.,positivo,entrega
+t_0287,1,Nadie avisó del retraso. Qué decepción.,negativo,entrega
+t_0288,5,El lomo saltado estaba buenazo y las porciones son generosas y sabrosas. Gracias!,positivo,comida
+t_0289,4,Pagar con la app fue rápido.,positivo,app
+t_0290,4,"Muy rica la comida, igual que en el local y el ceviche estaba fresquísimo. Recomendado.",positivo,comida
+t_0291,5,Pude seguir al repartidor en el mapa.,positivo,app
+t_0292,5,Alcanzó para tres personas. Volveré a pedir.,positivo,precio
+t_0293,5,Pagar con la app fue rápido. Gracias!,positivo,app
+t_0294,2,La sopa vino derramada y el motorizado fue grosero. Pésimo.,negativo,entrega
+t_0295,5,El motorizado cuidó bien el pedido.,positivo,entrega
+t_0296,4,El ceviche estaba fresquísimo. Gracias!,positivo,comida
+t_0297,2,Nadie avisó del retraso.,negativo,entrega
+t_0298,1,La pizza llegó quemada. Muy mal.,negativo,comida
+t_0299,5,Llegó en 20 minutos y el repartidor me avisó al llegar. Gracias!,positivo,entrega
+t_0300,1,La hamburguesa llegó fría y encontré un pelo en el plato.,negativo,comida
