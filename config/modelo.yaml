@@ -15,7 +15,7 @@ modelo:
 
 gate:                      # acierto mínimo en el golden set
   sentimiento: 0.85
-  tema: 0.80
+  tema: 1.01  # PRUEBA NEGATIVA: no hacer merge
 
 calidad:
   min_palabras: 3          # comentarios con menos palabras se excluyen
