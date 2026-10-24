@@ -1,0 +1,54 @@
+# Parámetros del modelo y umbrales de operación (fase 1).
+# Todo cambio a este archivo entra por Pull Request.
+
+modelo:
+  tfidf:
+    ngram_range: [1, 2]
+    sublinear_tf: true
+    strip_accents: unicode
+    lowercase: true
+  regresion_logistica:
+    C: 1.0
+    class_weight: balanced
+    max_iter: 1000
+    random_state: 42
+
+gate:                      # acierto mínimo en el golden set
+  sentimiento: 0.85
+  tema: 0.80
+
+calidad:
+  min_palabras: 3          # comentarios con menos palabras se excluyen
+  max_pct_excluidos: 20    # sobre este % se emite una advertencia
+  columnas_lote:
+    - comentario_id
+    - pedido_id
+    - restaurante_id
+    - cliente_id
+    - calificacion
+    - comentario
+    - fecha
+
+monitoreo:
+  baja_confianza: 0.5      # probabilidad máxima bajo la cual el modelo "duda"
+  alerta_puntos: 10        # subida en puntos porcentuales que enciende la alerta
+  metricas_alerta:
+    - pct_baja_confianza_sentimiento
+    - pct_baja_confianza_tema
+    - pct_palabras_no_vistas
+  top_comentarios_tema: 10 # comentarios con menor confianza de tema en el reporte
+
+datos:
+  entrenamiento: data/train/comentarios_entrenamiento.csv
+  golden_set: data/eval/golden_set.csv
+  carpeta_lotes: data/source
+  prefijo_lote: comentarios_
+  linea_base: monitoreo/linea_base.json
+  lote_linea_base: lote_01
+
+salidas:
+  calidad: salidas/calidad
+  modelo: salidas/modelo
+  gate: salidas/gate
+  puntuado: salidas/puntuado
+  monitoreo: salidas/monitoreo

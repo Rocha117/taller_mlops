@@ -40,7 +40,7 @@ El modelo no se cambia en este taller. Si mañana se reemplaza por otro, las pre
 
 ## Lo que completamos en clase
 
-- ¿Qué % de acierto en el golden set necesita un modelo para publicarse? ¿Igual para sentimiento y para tema?: ______
-- ¿Qué cambio en un lote nos tiene que alertar? (por ejemplo, la confianza promedio del modelo, el % de negativos o el % de sospechosos): ______
-- ¿Una alerta detiene el pipeline o solo avisa?: ______
-- ¿Cuándo se reentrena y quién aprueba que el modelo nuevo reemplace al actual?: ______
+- ¿Qué % de acierto en el golden set necesita un modelo para publicarse? ¿Igual para sentimiento y para tema?: **No igual. Sentimiento ≥ 85% y tema ≥ 80% de acierto (accuracy) en el golden set. Tema es más difícil (5 clases, "otro" casi sin ejemplos), por eso su umbral es menor. Si no llega, el pipeline se detiene y el modelo no se publica.**
+- ¿Qué cambio en un lote nos tiene que alertar? (por ejemplo, la confianza promedio del modelo, el % de negativos o el % de sospechosos): **El % de comentarios con baja confianza (probabilidad máxima < 0.5), en sentimiento o en tema, que sube más de 10 puntos sobre la línea base (lote 1). Señal de apoyo: el % de palabras que el modelo no vio al entrenar. El % de negativos no sirve: en el lote 2 casi no cambia (36% → 35%) aunque el modelo duda mucho más.**
+- ¿Una alerta detiene el pipeline o solo avisa?: **Solo avisa: deja una advertencia y el reporte en el resumen de la ejecución. Lo que detiene el pipeline es la calidad del lote (si el archivo no se puede usar) y el gate del golden set.**
+- ¿Cuándo se reentrena y quién aprueba que el modelo nuevo reemplace al actual?: **La alerta de deriva propone reentrenar (con nuevos comentarios etiquetados por personas). El modelo retador solo reemplaza al actual si gana en el golden set y una persona responsable lo aprueba en GitHub. Esto se construye en la fase 2.**
