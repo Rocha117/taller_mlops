@@ -1,0 +1,188 @@
+# Pipeline de la fase 1 · Desplegar y monitorear
+# Spec: specs/2026-10-23-fase-1-desplegar-monitorear/
+#
+# 1-calidad → 2-entrenar → 3-desplegar-gate → 4-puntuar → 5-monitorear
+# Detienen: calidad (lote inservible o pytest), entrenar, gate, puntuar.
+# Solo avisa: monitorear (deriva) y calidad (>20% de filas excluidas).
+
+name: Pipeline fase 1
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      lote:
+        description: Lote a puntuar
+        type: choice
+        options: [lote_01, lote_02]
+        default: lote_01
+  schedule:
+    - cron: "0 13 * * 1" # lunes 08:00 hora de Lima (solo corre desde main)
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pipeline-${{ github.ref }}-${{ inputs.lote || 'auto' }}
+  cancel-in-progress: true
+
+env:
+  PYTHON_VERSION: "3.11"
+  RETENCION_DIAS: 30
+
+jobs:
+  calidad:
+    name: 1-calidad
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Pruebas (pytest)
+        run: pytest -q
+      - name: Elegir lote
+        id: lote
+        env:
+          EVENTO: ${{ github.event_name }}
+          LOTE_INPUT: ${{ inputs.lote }}
+        run: |
+          case "$EVENTO" in
+            workflow_dispatch) LOTE="$LOTE_INPUT" ;;
+            schedule)          LOTE="ultimo" ;;
+            *)                 LOTE="lote_01" ;;
+          esac
+          echo "Lote elegido: $LOTE (evento: $EVENTO)"
+          echo "lote=$LOTE" >> "$GITHUB_OUTPUT"
+      - name: Calidad del lote
+        run: python src/calidad.py --lote "${{ steps.lote.outputs.lote }}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: calidad
+          path: salidas/calidad/
+          retention-days: ${{ env.RETENCION_DIAS }}
+          overwrite: true
+
+  entrenar:
+    name: 2-entrenar
+    needs: calidad
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Entrenar sentimiento y tema
+        run: python src/entrenar.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: modelo
+          path: salidas/modelo/
+          retention-days: ${{ env.RETENCION_DIAS }}
+          overwrite: true
+
+  gate:
+    name: 3-desplegar-gate
+    needs: entrenar
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+      - run: pip install -r requirements.txt
+      - uses: actions/download-artifact@v4
+        with:
+          name: modelo
+          path: salidas/modelo/
+      - name: Examen contra el golden set
+        run: python src/evaluar.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gate
+          path: salidas/gate/
+          retention-days: ${{ env.RETENCION_DIAS }}
+          overwrite: true
+      - name: Publicar modelo aprobado (metadata con resultado del gate)
+        uses: actions/upload-artifact@v4
+        with:
+          name: modelo
+          path: salidas/modelo/
+          retention-days: ${{ env.RETENCION_DIAS }}
+          overwrite: true
+
+  puntuar:
+    name: 4-puntuar
+    needs: gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+      - run: pip install -r requirements.txt
+      - uses: actions/download-artifact@v4
+        with:
+          name: calidad
+          path: salidas/calidad/
+      - uses: actions/download-artifact@v4
+        with:
+          name: modelo
+          path: salidas/modelo/
+      - uses: actions/download-artifact@v4
+        with:
+          name: gate
+          path: salidas/gate/
+      - name: Puntuar el lote
+        run: python src/puntuar.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lote-puntuado
+          path: salidas/puntuado/
+          retention-days: ${{ env.RETENCION_DIAS }}
+          overwrite: true
+
+  monitorear:
+    name: 5-monitorear
+    needs: puntuar
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+      - run: pip install -r requirements.txt
+      - uses: actions/download-artifact@v4
+        with:
+          name: calidad
+          path: salidas/calidad/
+      - uses: actions/download-artifact@v4
+        with:
+          name: modelo
+          path: salidas/modelo/
+      - uses: actions/download-artifact@v4
+        with:
+          name: lote-puntuado
+          path: salidas/puntuado/
+      - name: Comparar con la línea base
+        run: python src/monitorear.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reporte-monitoreo
+          path: salidas/monitoreo/
+          retention-days: ${{ env.RETENCION_DIAS }}
+          overwrite: true

@@ -192,6 +192,44 @@ Un **Pull Request en tu fork**, con:
 
 **Lotes** (`data/source/`): `comentario_id`, `pedido_id`, `restaurante_id`, `cliente_id`, `calificacion` (1 a 5), `comentario`, `fecha`. No traen etiquetas. Traen a propósito problemas de calidad (comentarios vacíos o muy cortos, pedidos sin calificación, duplicados) y algunos comentarios que contradicen su calificación. El lote 2 trae además **cambios que el modelo no vio al entrenar**. No los corrijas a mano: que tu spec diga qué hacer con ellos.
 
+## Pipeline de la fase 1
+
+Construido desde [`specs/2026-10-23-fase-1-desplegar-monitorear/`](specs/2026-10-23-fase-1-desplegar-monitorear/). Workflow: [`.github/workflows/pipeline.yml`](.github/workflows/pipeline.yml). Parámetros y umbrales: [`config/modelo.yaml`](config/modelo.yaml).
+
+| Script | Stage (job) | Qué hace | Salida (artefacto) |
+|---|---|---|---|
+| `tests/` (pytest) | `1-calidad` | Prueba las reglas de calidad y el enmascarado de datos personales | — |
+| `src/calidad.py` | `1-calidad` | Valida el CSV del lote; excluye duplicados, vacíos, muy cortos y calificaciones inválidas, con su motivo; enmascara el texto | `calidad`: `lote_limpio.csv`, `excluidos.csv`, `calidad.json` |
+| `src/entrenar.py` | `2-entrenar` | Entrena TF-IDF + regresión logística para sentimiento y tema con `data/train/` | `modelo`: `*.joblib`, `metadata.json`, `vocabulario.json` |
+| `src/evaluar.py` | `3-desplegar-gate` | Examen contra el golden set; **falla** si sentimiento < 85% o tema < 80% | `gate`: `gate.json` |
+| `src/puntuar.py` | `4-puntuar` | Predice el lote, marca sospechosos (5★ con texto negativo, 1★ con texto positivo) con motivo y palabras clave, y agrega `modelo_version`, `run_id` y `fecha_puntuacion` | `lote-puntuado`: `lote_XX_puntuado.csv` |
+| `src/monitorear.py` | `5-monitorear` | Compara con `monitoreo/linea_base.json`; **avisa** si la baja confianza o las palabras no vistas suben más de 10 puntos | `reporte-monitoreo`: `.md` y `.json`, más el resumen de la ejecución |
+| `src/metricas.py` | (librería) | Métricas de monitoreo, compartidas por la línea base y el monitoreo | — |
+| `src/enmascarar.py` | (librería) | Reemplaza correos, teléfonos, documentos, nombres y direcciones | — |
+| `src/linea_base.py` | (a mano) | Genera `monitoreo/linea_base.json` desde el lote 1; se sube por Pull Request | `monitoreo/linea_base.json` |
+
+**Cuándo corre:** en cada Pull Request hacia `main` (lote 1), a mano desde *Actions → Pipeline fase 1 → Run workflow* eligiendo `lote_01` o `lote_02`, y cada lunes a las 08:00 de Lima (el último lote; solo desde `main`).
+
+**Correr con el lote 2:** en GitHub, *Actions → Pipeline fase 1 → Run workflow*, elige la rama y `lote = lote_02`. Desde la terminal:
+
+```bash
+gh workflow run pipeline.yml --ref fase-1-desplegar-monitorear -f lote=lote_02
+```
+
+**Correr en local** (Python 3.11):
+
+```bash
+pip install -r requirements.txt
+pytest -q
+python src/calidad.py --lote lote_02
+python src/entrenar.py
+python src/evaluar.py
+python src/puntuar.py
+python src/monitorear.py
+```
+
+Los archivos quedan en `salidas/` (ignorada por Git). Para regenerar la línea base: `python src/linea_base.py`.
+
 ## Preguntas frecuentes
 
 **¿Por qué scikit-learn y no un LLM?** Porque se entrena en segundos, corre gratis en GitHub Actions y se puede explicar. El equipo de PideYa ya tomó esa decisión (ver [`negocio/input-negocio.md`](negocio/input-negocio.md)). Las 4 preguntas de operación serían las mismas con cualquier otro modelo.

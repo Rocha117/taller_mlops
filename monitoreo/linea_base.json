@@ -1,0 +1,29 @@
+{
+  "lote": "lote_01",
+  "archivo": "comentarios_lote_01.csv",
+  "modelo_version": "2026.10.23-838a249",
+  "fecha_generacion": "2026-10-24T02:48:19+00:00",
+  "metricas": {
+    "filas_puntuadas": 86,
+    "pct_baja_confianza_sentimiento": 4.7,
+    "pct_baja_confianza_tema": 15.1,
+    "pct_palabras_no_vistas": 1.6,
+    "confianza_media_sentimiento": 0.702,
+    "confianza_media_tema": 0.624,
+    "distribucion_sentimiento": {
+      "negativo": 36.0,
+      "neutral": 17.4,
+      "positivo": 46.5
+    },
+    "distribucion_tema": {
+      "app": 10.5,
+      "comida": 32.6,
+      "entrega": 34.9,
+      "otro": 1.2,
+      "precio": 20.9
+    },
+    "sospechosos": 5,
+    "pct_sospechosos": 5.8,
+    "pct_excluidos": 3.4
+  }
+}
