@@ -121,7 +121,7 @@ GitHub ejecuta el `schedule` solo desde `main`, así que la corrida semanal empi
   - una tabla con métrica, línea base, lote, diferencia, umbral y estado,
   - la `modelo_version` del lote y la de la línea base,
   - los conteos de calidad,
-  - para Producto, los 10 comentarios (enmascarados) con menor `confianza_tema`,
+  - para Producto, los 10 **textos distintos** (enmascarados) con menor `confianza_tema`: los textos repetidos se agrupan y se muestra cuántas veces aparece cada uno, el tema asignado, la confianza y un `comentario_id` de ejemplo,
   - para Calidad, la lista de sospechosos con su motivo.
 
 ## Restricciones
@@ -147,3 +147,4 @@ GitHub ejecuta el `schedule` solo desde `main`, así que la corrida semanal empi
 | Se reentrena en cada corrida | Tarda segundos y evita depender de un artefacto guardado; el registro de modelos llega en la fase 2. |
 | Jobs en cadena (calidad primero) | Si el lote no sirve, no se gastan minutos entrenando. |
 | `modelo_version` con la fecha del commit, no la de la corrida | Dos corridas del mismo código dan la misma versión. |
+| El top 10 para Producto agrupa los textos repetidos | En la primera corrida del lote 2, 5 copias de un mismo texto de soporte ocupaban el top y escondían el inglés y las propinas (2026-10-24). |

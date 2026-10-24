@@ -31,7 +31,7 @@ Tareas pequeñas, en orden. Cada una dice qué archivo crea o modifica. Se traba
 
 11. **Métricas.** Crear `src/metricas.py` con una función que calcule las métricas de monitoreo de un lote puntuado (más el vocabulario de entrenamiento y `calidad.json`). La usan la línea base y el monitoreo, para que ambos midan exactamente lo mismo.
 12. **Línea base.** Crear `src/linea_base.py`: corre calidad → entrenar → puntuar sobre el lote 1 y escribe `monitoreo/linea_base.json` (métricas, `modelo_version`, fecha). Ejecutarlo una vez y **commitear** el archivo.
-13. **Monitorear.** Crear `src/monitorear.py`: compara el lote con la línea base, decide la alerta (+10 puntos en baja confianza de sentimiento, baja confianza de tema o palabras no vistas), emite un `::warning::` por cada métrica que cruza el umbral y escribe el reporte en el resumen de la ejecución, `salidas/monitoreo/reporte_monitoreo.md` y `.json`. Termina en 0 aunque haya alerta, y en 1 solo si falta la línea base.
+13. **Monitorear.** Crear `src/monitorear.py`: compara el lote con la línea base, decide la alerta (+10 puntos en baja confianza de sentimiento, baja confianza de tema o palabras no vistas), emite un `::warning::` por cada métrica que cruza el umbral, arma el top 10 de textos distintos con menor confianza en tema (con cuántas veces se repite cada uno; prueba en `tests/test_monitorear.py`) y escribe el reporte en el resumen de la ejecución, `salidas/monitoreo/reporte_monitoreo.md` y `.json`. Termina en 0 aunque haya alerta, y en 1 solo si falta la línea base.
 
 ## Grupo F · Orquestación
 

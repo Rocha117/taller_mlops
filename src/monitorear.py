@@ -60,7 +60,37 @@ def celda(texto: str) -> str:
     return str(texto).replace("|", "\\|").replace("\n", " ")
 
 
-def construir_reporte(reporte: dict, puntuado: pd.DataFrame, top_n: int) -> str:
+def textos_menor_confianza_tema(puntuado: pd.DataFrame, top_n: int) -> list[dict]:
+    """Los top_n textos DISTINTOS con menor confianza en tema, con cuántas veces aparece cada uno.
+
+    Se agrupa por texto para que un comentario repetido no ocupe todo el top y
+    esconda otros temas que el modelo no conoce.
+    """
+    grupos = (
+        puntuado.groupby("comentario", sort=False)
+        .agg(
+            tema=("tema", "first"),
+            confianza_tema=("confianza_tema", "min"),
+            veces=("comentario_id", "size"),
+            ejemplo_id=("comentario_id", "first"),
+        )
+        .reset_index()
+        .sort_values(["confianza_tema", "ejemplo_id"])
+        .head(top_n)
+    )
+    return [
+        {
+            "comentario": r.comentario,
+            "tema": r.tema,
+            "confianza_tema": float(r.confianza_tema),
+            "veces": int(r.veces),
+            "ejemplo_id": r.ejemplo_id,
+        }
+        for r in grupos.itertuples()
+    ]
+
+
+def construir_reporte(reporte: dict, puntuado: pd.DataFrame) -> str:
     alertas = [f for f in reporte["comparacion"] if f["alerta"]]
     encabezado = (
         f"🔔 ALERTA DE DERIVA · {len(alertas)} métrica(s) sobre el umbral"
@@ -93,14 +123,17 @@ def construir_reporte(reporte: dict, puntuado: pd.DataFrame, top_n: int) -> str:
         f"{c['filas_leidas']} leídas · {c['filas_excluidas']} excluidas ({motivos}) · "
         f"{c['filas_sin_calificacion']} sin calificación · **{c['filas_validas']} puntuadas**",
         "",
-        f"### Para Producto · los {top_n} comentarios con menor confianza en tema",
-        "Pistas de temas que el modelo no conoce (los asigna a otro tema sin avisar).",
+        f"### Para Producto · los {len(reporte['textos_menor_confianza_tema'])} textos distintos con menor confianza en tema",
+        "Pistas de temas que el modelo no conoce (los asigna a otro tema sin avisar). "
+        "Los textos repetidos se agrupan y se indica cuántas veces aparecen.",
         "",
-        "| comentario_id | Tema asignado | Confianza | Comentario (enmascarado) |",
-        "|---|---|---|---|",
+        "| Comentario (enmascarado) | Veces | Tema asignado | Confianza | Ejemplo |",
+        "|---|---|---|---|---|",
     ]
-    for _, r in puntuado.nsmallest(top_n, "confianza_tema").iterrows():
-        lineas.append(f"| {r.comentario_id} | {r.tema} | {r.confianza_tema} | {celda(r.comentario)} |")
+    for t in reporte["textos_menor_confianza_tema"]:
+        lineas.append(
+            f"| {celda(t['comentario'])} | {t['veces']} | {t['tema']} | {t['confianza_tema']} | {t['ejemplo_id']} |"
+        )
 
     sospechosos = puntuado[a_booleano(puntuado["es_sospechoso"])]
     lineas += [
@@ -152,11 +185,12 @@ def main() -> int:
         "metricas": metricas,
         "calidad": calidad,
         "comparacion": comparacion,
+        "textos_menor_confianza_tema": textos_menor_confianza_tema(puntuado, mon["top_comentarios_tema"]),
     }
 
     salida = ruta(config["salidas"]["monitoreo"])
     guardar_json(reporte, salida / "reporte_monitoreo.json")
-    markdown = construir_reporte(reporte, puntuado, mon["top_comentarios_tema"])
+    markdown = construir_reporte(reporte, puntuado)
     (salida / "reporte_monitoreo.md").write_text(markdown, encoding="utf-8")
     resumen(markdown)
 

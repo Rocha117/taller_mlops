@@ -42,7 +42,7 @@ Los criterios marcados se comprobaron con los artefactos descargados de esas cor
 - [x] El resumen muestra la tabla métrica / línea base / lote / diferencia / umbral / estado.
 - [x] Valores esperados: baja confianza en sentimiento **≈ 4.7%**, en tema **≈ 15.1%**, palabras no vistas **≈ 1.6%**, sospechosos **≈ 5.8%**, negativos **≈ 36%**. *(Resultado: 4.7 · 15.1 · 1.6 · 5.8 · 36.0)*
 - [x] Todas las diferencias contra la línea base son **0** y el encabezado dice **`✅ Sin deriva`**.
-- [x] El reporte lista los 10 comentarios con menor confianza en tema y los 5 sospechosos.
+- [ ] El reporte lista los 10 **textos distintos** con menor confianza en tema (con cuántas veces se repite cada uno) y los 5 sospechosos.
 
 ## Con el lote 2 (`workflow_dispatch`, `lote = lote_02`): debe alertar
 
@@ -62,7 +62,7 @@ Los criterios marcados se comprobaron con los artefactos descargados de esas cor
 
 - [x] Aparece una anotación `::warning::` por cada métrica que cruza el umbral, y el encabezado del resumen dice **`🔔 ALERTA DE DERIVA`**. *(3 anotaciones)*
 - [x] **El job `5-monitorear` termina en verde**: la alerta avisa, no bloquea.
-- [ ] Entre los comentarios con menor confianza en tema aparecen los temas que el modelo no conoce: inglés ("Delivery took forever…"), reembolsos, soporte y propinas. *(Parcial: el top 10 muestra reembolsos y soporte. El comentario en inglés queda en el puesto 15 y el de propinas en el 25; los dos tienen baja confianza (< 0.5) y están en el CSV puntuado, pero no en el top 10, porque lo llenan textos de soporte repetidos.)*
+- [ ] Entre los 10 textos distintos con menor confianza en tema aparecen los temas que el modelo no conoce: inglés ("Delivery took forever…"), reembolsos, soporte y propinas. *(En la primera corrida (40055854203) el top no agrupaba textos repetidos y solo mostraba reembolsos y soporte; por eso se cambió el reporte.)*
 - [x] Sospechosos: **≈ 9**, incluidos los comentarios de reembolso con 1★ leídos como positivos. Son las falsas alarmas que explica la deriva. *(9, de los cuales 4 son de reembolso)*
 
 **Por qué debe alertar:** el lote 2 trae comentarios en inglés y temas que no están en el entrenamiento (16 sobre reembolsos, soporte o propinas). El modelo no los inventa: los asigna a otro tema con poca confianza. Eso se ve en la baja confianza y en las palabras no vistas, no en el % de negativos.
