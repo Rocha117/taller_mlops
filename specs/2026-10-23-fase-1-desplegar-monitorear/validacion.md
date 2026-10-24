@@ -8,6 +8,8 @@ Cada criterio dice dónde se comprueba y qué resultado se espera. Los valores "
 |---|---|---|
 | [40055836663](https://github.com/Rocha117/taller_mlops/actions/runs/40055836663) | Pull Request #1 · lote 1 | 5 jobs en verde · `✅ Sin deriva` |
 | [40055854203](https://github.com/Rocha117/taller_mlops/actions/runs/40055854203) | `workflow_dispatch` · lote 2 | 5 jobs en verde · `🔔 ALERTA DE DERIVA` en 3 métricas |
+| [40056605584](https://github.com/Rocha117/taller_mlops/actions/runs/40056605584) | Pull Request #1 · lote 1 · con el top 10 agrupado (`7e449c4`) | 5 jobs en verde · `✅ Sin deriva` |
+| [40056603411](https://github.com/Rocha117/taller_mlops/actions/runs/40056603411) | `workflow_dispatch` · lote 2 · con el top 10 agrupado (`7e449c4`) | 5 jobs en verde · `🔔 ALERTA DE DERIVA` en 3 métricas · top 10 con inglés, reembolsos, soporte y propinas |
 
 Los criterios marcados se comprobaron con los artefactos descargados de esas corridas (`calidad`, `gate`, `lote-puntuado`, `reporte-monitoreo`) y con las anotaciones del job `5-monitorear`.
 
@@ -16,7 +18,7 @@ Los criterios marcados se comprobaron con los artefactos descargados de esas cor
 ### Pipeline
 - [x] El PR muestra los 5 jobs: `1-calidad`, `2-entrenar`, `3-desplegar-gate`, `4-puntuar` y `5-monitorear`. **Esperado:** todos en verde.
 - [x] La corrida completa tarda menos de 5 minutos. **Dónde:** duración total de la ejecución en la pestaña Actions. *(≈ 2 minutos)*
-- [x] `pytest` pasa en `1-calidad`. **Dónde:** log del job. *(19 pruebas)*
+- [x] `pytest` pasa en `1-calidad`. **Dónde:** log del job. *(20 pruebas)*
 
 ### Calidad del lote (`1-calidad`, artefacto `calidad` → `calidad.json`)
 - [x] Filas leídas: **89**.
@@ -42,7 +44,7 @@ Los criterios marcados se comprobaron con los artefactos descargados de esas cor
 - [x] El resumen muestra la tabla métrica / línea base / lote / diferencia / umbral / estado.
 - [x] Valores esperados: baja confianza en sentimiento **≈ 4.7%**, en tema **≈ 15.1%**, palabras no vistas **≈ 1.6%**, sospechosos **≈ 5.8%**, negativos **≈ 36%**. *(Resultado: 4.7 · 15.1 · 1.6 · 5.8 · 36.0)*
 - [x] Todas las diferencias contra la línea base son **0** y el encabezado dice **`✅ Sin deriva`**.
-- [ ] El reporte lista los 10 **textos distintos** con menor confianza en tema (con cuántas veces se repite cada uno) y los 5 sospechosos.
+- [x] El reporte lista los 10 **textos distintos** con menor confianza en tema (con cuántas veces se repite cada uno) y los 5 sospechosos. *(Corrida 40056605584)*
 
 ## Con el lote 2 (`workflow_dispatch`, `lote = lote_02`): debe alertar
 
@@ -62,7 +64,7 @@ Los criterios marcados se comprobaron con los artefactos descargados de esas cor
 
 - [x] Aparece una anotación `::warning::` por cada métrica que cruza el umbral, y el encabezado del resumen dice **`🔔 ALERTA DE DERIVA`**. *(3 anotaciones)*
 - [x] **El job `5-monitorear` termina en verde**: la alerta avisa, no bloquea.
-- [ ] Entre los 10 textos distintos con menor confianza en tema aparecen los temas que el modelo no conoce: inglés ("Delivery took forever…"), reembolsos, soporte y propinas. *(En la primera corrida (40055854203) el top no agrupaba textos repetidos y solo mostraba reembolsos y soporte; por eso se cambió el reporte.)*
+- [x] Entre los 10 textos distintos con menor confianza en tema aparecen los temas que el modelo no conoce: inglés ("Delivery took forever…"), reembolsos, soporte y propinas. *(Corrida 40056603411: aparecen los cuatro, además del sarcasmo "las mejores papas aguadas". En la primera corrida (40055854203) el top no agrupaba textos repetidos y solo mostraba reembolsos y soporte; por eso se cambió el reporte.)*
 - [x] Sospechosos: **≈ 9**, incluidos los comentarios de reembolso con 1★ leídos como positivos. Son las falsas alarmas que explica la deriva. *(9, de los cuales 4 son de reembolso)*
 
 **Por qué debe alertar:** el lote 2 trae comentarios en inglés y temas que no están en el entrenamiento (16 sobre reembolsos, soporte o propinas). El modelo no los inventa: los asigna a otro tema con poca confianza. Eso se ve en la baja confianza y en las palabras no vistas, no en el % de negativos.
@@ -78,5 +80,5 @@ Los criterios marcados se comprobaron con los artefactos descargados de esas cor
 | Falla la puntuación (`4-puntuar`) | |
 | Falta `monitoreo/linea_base.json` (`5-monitorear`) | |
 
-- [ ] Los 5 jobs están marcados como *required status checks* en el ruleset de `main`. *(Pendiente: se hace en GitHub)*
+- [x] Los 5 jobs están marcados como *required status checks* en el ruleset de `main`. *(Ruleset `proteger-main`, activo)*
 - [x] Al PR se adjunta el enlace a la ejecución del lote 2 (o una captura) con la alerta visible.
